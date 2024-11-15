@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackwell Family Tree</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .generation {
+            display: none; /* Initially hidden */
+            flex-direction: row;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .generation:first-child {
+            display: flex; /* Show the first generation by default */
+        }
+        .person {
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .connector {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin: 10px 0;
+        }
+        .horizontal-line {
+            height: 2px;
+            width: 50px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blackwell Family Tree</h1>
+    <div class="tree">
+        <!-- Generation 1 -->
+        <div class="generation">
+            <div class="person">Nathaniel Blackwell<br>(1637-1699)</div>
+            <div class="person">Amara Jansen<br>(1649-1697)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 2 -->
+        <div class="generation">
+            <div class="person">Matthias Jansen-Blackwell<br>(1673-1729)</div>
+            <div class="person">Emilie Becker<br>(1673-1694)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 3 -->
+        <div class="generation">
+            <div class="person">Jacob Blackwell<br>(1694-1755)</div>
+            <div class="person">Sophia Blackwell<br>(1694-1729)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 4 -->
+        <div class="generation">
+            <div class="person">Nathaniel Blackwell II<br>(1719-1799)</div>
+            <div class="person">Isabella Blackwell<br>(1722-1825)</div>
+            <div class="person">Amelia Blackwell<br>(1720-1798)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 5 -->
+        <div class="generation">
+            <div class="person">Nathaniel Blackwell III<br>(1755-1845)</div>
+            <div class="person">Sofia da Silva Blackwell<br>(1754-1840)</div>
+            <div class="person">Mei Qiang Blackwell<br>(1746-1813)</div>
+            <div class="person">Kai Qiang Blackwell<br>(1747-1840)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 6 -->
+        <div class="generation">
+            <div class="person">William Blackwell<br>(1820-1930)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 7 -->
+        <div class="generation">
+            <div class="person">Richard Thompson<br>(1867-1917)</div>
+            <div class="person">Mary Rose Thompson<br>(1867-1920)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 8 -->
+        <div class="generation">
+            <div class="person">Benjamin Gable<br>(1900-1985)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 9 -->
+        <div class="generation">
+            <div class="person">Henry Gable<br>(1942-Today)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 10 -->
+        <div class="generation">
+            <div class="person">Cimone Gable<br>(1977-Today)</div>
+            <div class="person">Henry Hooks<br>(1979-Today)</div>
+        </div>
+        <div class="connector">
+            <div class="horizontal-line"></div>
+        </div>
+        <!-- Generation 11 -->
+        <div class="generation">
+            <div class="person">Brenden Hooks<br>(1999-Today)</div>
+            <div class="person">Ajani Hooks<br>(2006-Today)</div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.person').forEach(person => {
+            person.addEventListener('click', () => {
+                const nextGeneration = person.parentElement.nextElementSibling;
+                if (nextGeneration && nextGeneration.classList.contains('generation')) {
+                    nextGeneration.style.display = 
+                        nextGeneration.style.display === 'none' ? 'flex' : 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
